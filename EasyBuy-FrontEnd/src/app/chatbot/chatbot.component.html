@@ -1,0 +1,120 @@
+<!-- Toggle Button -->
+<button class="chatbot-toggle-btn" (click)="toggleChatbot()">
+  💬
+</button>
+
+<!-- Chatbot Panel -->
+<div class="chatbot-fixed-container" *ngIf="isChatbotOpen">
+  <div class="chatbot-container">
+    <div class="chatbot-header">
+      <h3>Chatbot Assistant</h3>
+      <button class="close-btn" (click)="toggleChatbot()">✖</button>
+    </div>
+    
+
+<div class="chat-history" #chatBox *ngIf="chatHistory.length > 0">
+      <div *ngFor="let chat of chatHistory" class="chat-entry">
+        <div class="message user-message">{{ chat.question }}</div>
+        <div class="message bot-message">{{ chat.answer }}</div>
+      </div>
+    </div>
+
+    <form (submit)="sendMessage()" class="chat-form">
+      <input
+        #chatInput
+
+        type="text"
+        [(ngModel)]="userInput"
+        name="userInput"
+        placeholder="Ask something..."
+        [disabled]="loading"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" [disabled]="loading">➤</button>
+    </form>
+
+    <div *ngIf="error" class="error-msg">{{ error }}</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="chatbot-fixed-container">
+  <div class="chatbot-container">
+    <h2>Chatbot Assistant</h2>
+
+    <div class="chat-history" *ngIf="chatHistory.length > 0">
+      <div *ngFor="let chat of chatHistory" class="chat-entry">
+        <div class="message user-message"><strong>You:</strong> {{ chat.question }}</div>
+        <div class="message bot-message"><strong>Bot:</strong> {{ chat.answer }}</div>
+      </div>
+    </div>
+
+    <form (submit)="sendMessage()" class="chat-form">
+      <input
+        type="text"
+        [(ngModel)]="userInput"
+        name="userInput"
+        placeholder="Type your question..."
+        [disabled]="loading"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" [disabled]="loading">Send</button>
+    </form>
+
+    <div *ngIf="error" class="error-msg">{{ error }}</div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="chatbot-container">
+  <h2>Chatbot Assistant</h2>
+
+  <div class="chat-history" *ngIf="chatHistory.length > 0">
+    <div *ngFor="let chat of chatHistory" class="chat-entry">
+      <div class="question"><strong>You:</strong> {{ chat.question }}</div>
+      <div class="answer"><strong>Bot:</strong> {{ chat.answer }}</div>
+    </div>
+  </div>
+
+  <form (submit)="sendMessage()" class="chat-form">
+    <input
+      type="text"
+      [(ngModel)]="userInput"
+      name="userInput"
+      placeholder="Type your question..."
+      [disabled]="loading"
+      autocomplete="off"
+      required
+    />
+    <button type="submit" [disabled]="loading">Send</button>
+  </form>
+
+  <div *ngIf="error" class="error-msg">{{ error }}</div>
+</div>  -->

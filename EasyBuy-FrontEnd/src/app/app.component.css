@@ -1,0 +1,22 @@
+.chat-toggle-button {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1001;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.chatbot-container {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  z-index: 1000;
+}
