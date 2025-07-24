@@ -17,6 +17,8 @@ import java.util.Set;
 
 @RestController
 public class ProductController {
+	
+	
 
     @Autowired
     private ProductService productService;
@@ -58,6 +60,7 @@ public class ProductController {
 
     @GetMapping({"/getProductDetailsById/{productId}"})
     public Product getProductDetailsById(@PathVariable("productId") Integer productId) {
+    	System.out.print("in controller");
         return productService.getProductDetailsById(productId);
     }
 
