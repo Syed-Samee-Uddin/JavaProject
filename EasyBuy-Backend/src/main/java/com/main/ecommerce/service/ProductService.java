@@ -29,6 +29,7 @@ public class ProductService {
     private CartDao cartDao;
 
     public Product addNewProduct(Product product) {
+    	System.out.print("hello");
         return productDao.save(product);
     }
 
